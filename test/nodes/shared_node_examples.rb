@@ -4,7 +4,7 @@ shared_examples_for 'A Binary Node' do |node|
   describe 'construction' do
     it 'requires two arguments' do
       err = ->{ node.new }.must_raise ArgumentError
-      err.message.must_match %r{wrong number of arguments \(0 for 2\)}
+      err.message.must_match %r{wrong number of arguments (?:\(0 for 2\)|\(given 0, expected 2\))}
     end
 
     it 'creates a new instance' do
